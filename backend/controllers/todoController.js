@@ -4,7 +4,7 @@ const Todo = require('../models/Todo');
 
 const getTodos = async(req, res) => {
     try{
-        const todo = await Todo.find().sort({ createdAt : -1 });
+        const todos = await Todo.find().sort({ createdAt : -1 });
         res.json(todos);
     } catch(error){
         res.status(500).json({ message:error.message });
